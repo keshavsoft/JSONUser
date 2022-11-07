@@ -6,7 +6,7 @@ router.post('/', function (req, res, next) {
     let LocalUserName = req.body.UserName;
     let LocalPassWord = req.body.PassWord;
     let LocalEmail = req.body.inEmail;
-    //console.log("create -------------");
+    console.log("create -------------");
     Repo.Insert({
         inUserName: LocalUserName,
         inPassword: LocalPassWord,

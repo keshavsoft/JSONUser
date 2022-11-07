@@ -6,7 +6,7 @@ router.get('/:inUserName/:inEmail/:inJWToken', function (req, res, next) {
     let LocalUserName = req.params.inUserName;
     let LocalJWToken = req.params.inJWToken;
     let LocalinEmail = req.params.inEmail;
-
+    console.log("aaaaaaaaaaaa");
     Repo.VerifyTokenAndSetup({
         inUserName: LocalUserName,
         inEmail: LocalinEmail,

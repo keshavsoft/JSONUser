@@ -1,11 +1,14 @@
 // let CommonUserFuncs = require("../../../../../DataSupply/Fs/Users/PushData");
 // let CommonUserAdminFuncs = require("../../../../../DataSupply/Fs/Users/Admin/PushData");
 
+//let CommonToJsonFile = require("../../../../../DataSupply/Fs/LoginFolder/UserDataJson/PushData/ToJsonFile");
+let CommonNewUser = require("../../../../../DataSupply/Fs/LoginFolder/UserDataJson/InsertData/NewUser");
+
 let Create = async ({ inUserPK, inUserName, inPassword, inEmail }) => {
     let LocalReturnData;
 
     if (inUserPK > 0) {
-       // LocalReturnData = await CommonUserFuncs.PushDataAysnc({ inUserPK, inUserName, inPassword, inEmail });
+        // LocalReturnData = await CommonUserFuncs.PushDataAysnc({ inUserPK, inUserName, inPassword, inEmail });
 
         return await LocalReturnData;
     };
@@ -20,11 +23,9 @@ let Admin = async ({ inUserName, inPassword }) => {
 };
 
 let Insert = async ({ inUserName, inPassword, inEmail }) => {
-    let LocalReturnData 
-    
-    //= await CommonUserAdminFuncs.WithEmail({ inUserName, inPassword, inEmail });
-    
-    return await LocalReturnData;
+    let LocalFromInsert = await CommonNewUser.WithEmail({ inUserName, inPassword, inEmail });
+    console.log("LocalFromInsert : ", LocalFromInsert);
+    return await LocalFromInsert;
 };
 
 module.exports = { Create, Admin, Insert };
