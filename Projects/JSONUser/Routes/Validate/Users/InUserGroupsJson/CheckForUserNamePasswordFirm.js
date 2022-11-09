@@ -5,7 +5,7 @@ let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCr
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
 
 router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
-    console.log("sssssss :",req.body);
+    console.log("sssssss : ", req.body);
 
     if ("inUserName" in req.body) {
         if ("inPassWord" in req.body) { 
@@ -29,13 +29,13 @@ router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
                 });
 
             } else {
-                res.json({ KTF: false, KReason: "Need to send inFirmName!" });
+                res.json({ KTF: false, KReason: "Need to send inUserName!" });
             };
         } else {
-            res.json({ KTF: false, KReason: "Need to send inPassWord!" });
+            res.json({ KTF: false, KReason: "Need to send inUserName!" });
         };
     } else {
-        res.json({ KTF: false, KReason: "Need to send inUserName!" });
+        res.json({ KTF: false, KReason: "Need to send inPassWord!" });
     };
 });
 
