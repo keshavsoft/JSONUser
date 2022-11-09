@@ -1,0 +1,6 @@
+POST http://localhost:4119/JSONUser/Validate/Users/InUserGroupsJson/ForUserNamePasswordFirm/LoginCheckReturnTokenOnly
+content-type: application/json
+ 
+{   
+  
+}
