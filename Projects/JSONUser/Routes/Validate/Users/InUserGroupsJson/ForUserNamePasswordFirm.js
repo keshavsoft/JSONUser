@@ -1,7 +1,7 @@
 let express = require("express");
 let router = express.Router();
 
-let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials")
+let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials");
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
 
 router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
