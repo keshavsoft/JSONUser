@@ -1,14 +1,16 @@
 let express = require("express");
 let router = express.Router();
 
-let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials")
+let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials");
+let CommonMiddleware = require("../../../../Middleware/Validate/Users/InUserGroupsJson/CheckForUserNamePasswordFirm")
+
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
 
-router.post('/', (req, res,) => {
+router.post('/', CommonMiddleware.CheckForUserNamePasswordFirm, (req, res,) => {
     console.log("sssssss : ", req.body);
 
     if ("inUserName" in req.body) {
-        if ("inPassWord" in req.body) { 
+        if ("inPassWord" in req.body) {
             if ("inFirmName" in req.body) {
                 let LocalUserName = req.body.inUserName;
                 let LocalPassWord = req.body.inPassWord;
