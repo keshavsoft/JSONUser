@@ -8,4 +8,5 @@ node_modules/
 /KeshavSoft
 /DependantModules
 
+.env
 web.config

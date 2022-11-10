@@ -3,6 +3,8 @@ let CommonProjectNameForJSONApi = "JSONApi";
 let CommonProjectNameForJSONAdminApi = "JSONAdminApi";
 let commonProjectNameForJSONUser = "JSONUser";
 
+require('dotenv').config()
+
 const express = require('express');
 var path = require('path');
 
@@ -23,9 +25,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json({ limit: '100mb' }));
 
 app.get('/', function (req, res, next) {
-    console.log("ssssssss : ", process.env.NODE_ENV);
+    //console.log("ssssssss : ", process.env.NODE_ENV);
+    console.log("process.env : ", process.env.KS_EMAIL_PASS);
     res.sendFile(path.join(__dirname + `/Html/JSONProject.html`));
 });
+
 
 //app.use("/JSONUser", SubRouteJSONUser);
 //app.use("/JSONApi", cors({ origin: '*' }), SubRouteJSONProject);
