@@ -9,3 +9,4 @@ let ForUserAndPasswordReturnFirmDetails = async ({ inUserName, inPassWord }) => 
 };
 
 module.exports = { ForUserAndPassword, ForUserAndPasswordReturnFirmDetails };
+
