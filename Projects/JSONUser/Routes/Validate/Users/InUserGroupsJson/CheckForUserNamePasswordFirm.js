@@ -7,38 +7,23 @@ let CommonMiddleware = require("../../../../Middleware/Validate/Users/InUserGrou
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
 
 router.post('/', CommonMiddleware.CheckForUserNamePasswordFirm, (req, res,) => {
-    console.log("sssssss : ", req.body);
+    let LocalUserName = req.body.inUserName;
+    let LocalPassWord = req.body.inPassWord;
+    let LocalFirmName = req.body.inFirmName;
 
-    if ("inUserName" in req.body) {
-        if ("inPassWord" in req.body) {
-            if ("inFirmName" in req.body) {
-                let LocalUserName = req.body.inUserName;
-                let LocalPassWord = req.body.inPassWord;
-                let LocalFirmName = req.body.inFirmName;
-
-                Repo.ForUserPasswordFirm({
-                    inUserName: LocalUserName,
-                    inPassWord: LocalPassWord,
-                    inFirmName: LocalFirmName
-                }).then(PromiseData => {
-                    if (PromiseData.kPK > 0) {
-                        CommonjwtFunc.CreateToken({
-                            inDataPk: PromiseData.kPK
-                        }).then((PromiseDataFromJwt) => {
-                            res.end(PromiseDataFromJwt);
-                        });
-                    };
-                });
-
-            } else {
-                res.json({ KTF: false, KReason: "Need to send inUserName!" });
-            };
-        } else {
-            res.json({ KTF: false, KReason: "Need to send inUserName!" });
+    Repo.ForUserPasswordFirm({
+        inUserName: LocalUserName,
+        inPassWord: LocalPassWord,
+        inFirmName: LocalFirmName
+    }).then(PromiseData => {
+        if (PromiseData.kPK > 0) {
+            CommonjwtFunc.CreateToken({
+                inDataPk: PromiseData.kPK
+            }).then(PromiseDataFromJwt => {
+                res.end(PromiseDataFromJwt.KToken);
+            });
         };
-    } else {
-        res.json({ KTF: false, KReason: "Need to send inPassWord!" });
-    };
+    });
 });
 
 module.exports = router;
