@@ -2,5 +2,7 @@ POST http://localhost:4119/JSONUser/Validate/Users/InUserGroupsJson/CheckForUser
 content-type: application/json
  
 {   
-  
+  "inUserName": "ABS",
+  "inPassWord": "ABS",
+  "inFirmName": "JASTHI"
 }
