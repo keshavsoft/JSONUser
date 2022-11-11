@@ -2,6 +2,7 @@ let express = require("express");
 let router = express.Router();
 
 let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials");
+let commonMiddleware = require("../../../../Middleware/Validate/Users/InUserGroupsJson/ForUserNameAndPasswordFirm")
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
 
 router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
@@ -23,7 +24,7 @@ router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
                         CommonjwtFunc.CreateToken({
                             inDataPk: PromiseData.kPK
                         }).then((PromiseDataFromJwt) => {
-                            res.end(PromiseDataFromJwt);
+                            res.end(PromiseDataFromJwt.KToken);
                         });
                     };
                 });
@@ -38,5 +39,7 @@ router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
         res.json({ KTF: false, KReason: "Need to send inUserName!" });
     };
 });
+
+
 
 module.exports = router;
