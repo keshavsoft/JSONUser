@@ -8,5 +8,7 @@ node_modules/
 /KeshavSoft
 /DependantModules
 
+/Projects/JSONUser-
+
 .env
 web.config

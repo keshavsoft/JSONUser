@@ -1,45 +1,38 @@
 let express = require("express");
 let router = express.Router();
 
-let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForCredentials");
-let commonMiddleware = require("../../../../Middleware/Validate/Users/InUserGroupsJson/ForUserNameAndPasswordFirm")
+let Repo = require("../../../../Repository/Validate/Users/InUserGroupsJson/ForUserNamePasswordFirm");
+//let commonMiddleware = require("../../../../Middleware/Validate/Users/InUserGroupsJson/ForUserNameAndPasswordFirm")
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserGroupsJson");
+let CommonMiddleware = require("../../../../Middleware/Validate/Users/InUserGroupsJson/ForUserNameAndPasswordFirm");
 
-router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
-    console.log("sssssss :",req.body);
+router.post('/LoginCheckReturnTokenOnly', CommonMiddleware.ForUserNameAndPassword, (req, res,) => {
+    console.log("ForUserNameAndPassword :", req.body);
 
-    if ("inUserName" in req.body) {
-        if ("inPassWord" in req.body) { 
-            if ("inFirmName" in req.body) {
-                let LocalUserName = req.body.inUserName;
-                let LocalPassWord = req.body.inPassWord;
-                let LocalFirmName = req.body.inFirmName;
+    let LocalUserName = req.body.inUserName;
+    let LocalPassWord = req.body.inPassWord;
+    let LocalFirmName = req.body.inFirmName;
 
-                Repo.ForUserPasswordFirm({
-                    inUserName: LocalUserName,
-                    inPassWord: LocalPassWord,
-                    inFirmName: LocalFirmName
-                }).then(PromiseData => {
-                    if (PromiseData.kPK > 0) {
-                        CommonjwtFunc.CreateToken({
-                            inDataPk: PromiseData.kPK
-                        }).then((PromiseDataFromJwt) => {
-                            res.end(PromiseDataFromJwt.KToken);
-                        });
-                    };
-                });
-
-            } else {
-                res.json({ KTF: false, KReason: "Need to send inFirmName!" });
-            };
+    Repo.ForUserPasswordFirm({
+        inUserName: LocalUserName,
+        inPassWord: LocalPassWord,
+        inFirmName: LocalFirmName
+    }).then(PromiseData => {
+        console.log("111111 :", PromiseData);
+        if (PromiseData.KTF === false) {
+            res.json(PromiseData.KReason);
         } else {
-            res.json({ KTF: false, KReason: "Need to send inPassWord!" });
+            if (PromiseData.kPK > 0) {
+                CommonjwtFunc.CreateToken({
+                    inDataPk: PromiseData.kPK
+                }).then((PromiseDataFromJwt) => {
+                    console.log("2222222222222 :", PromiseDataFromJwt);
+
+                    res.end(PromiseDataFromJwt.KToken);
+                });
+            };
         };
-    } else {
-        res.json({ KTF: false, KReason: "Need to send inUserName!" });
-    };
+    });
 });
-
-
 
 module.exports = router;

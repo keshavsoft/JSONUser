@@ -19,14 +19,16 @@ router.post('/', (req, res,) => {
 router.post('/TokenToCookie', (req, res,) => {
     let LocalUserName = req.body.inUserName;
     let LocalPassWord = req.body.inPassWord;
-    
+    console.log("ssssssssss");
     Repo.ForUserAndPasswordReturnFirmDetails({
         inUserName: LocalUserName,
         inPassWord: LocalPassWord,
     }).then(PromiseData => {
+        console.log("PromiseData : ", PromiseData);
         if (PromiseData.KTF === false) {
             res.json(PromiseData);
         } else {
+            
             if (PromiseData.kPK > 0) {
                 CommonjwtFunc.CreateToken({
                     inUserName: LocalUserName,
