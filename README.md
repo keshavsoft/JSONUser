@@ -17,3 +17,7 @@ follow below steps for development
 9.  run node app
 
 
+steps to follow for using this Repo in JSONApi
+
+1.  copy JSONUser from root:Projects to JSONApi Repo:Projects
+2.  alter the JSONApi/app.js
