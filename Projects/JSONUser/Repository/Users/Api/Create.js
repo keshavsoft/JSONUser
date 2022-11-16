@@ -18,3 +18,11 @@ exports.Insert = async ({ inUserName, inPassword, inEmail }) => {
     return await LocalReturnData;
 };
 
+exports.postWithOutPasswordFunc = async ({ inUserName, inEmail }) => {
+    let LocalReturnData = await dal.postWithOutPasswordFunc({ inUserName, inEmail });
+
+    return await LocalReturnData;
+};
+
+
+

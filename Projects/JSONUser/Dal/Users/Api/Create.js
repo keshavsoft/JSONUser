@@ -28,4 +28,12 @@ let Insert = async ({ inUserName, inPassword, inEmail }) => {
     return await LocalFromInsert;
 };
 
-module.exports = { Create, Admin, Insert };
+let postWithOutPasswordFunc = async ({ inUserName, inEmail }) => {
+    let LocalFromInsert = await CommonNewUser.WithUerNameAndEmailOnly({ inUserName, inEmail });
+    console.log("LocalFromInsert : ", LocalFromInsert);
+    return await LocalFromInsert;
+};
+
+
+
+module.exports = { Create, Admin, Insert,postWithOutPasswordFunc };
