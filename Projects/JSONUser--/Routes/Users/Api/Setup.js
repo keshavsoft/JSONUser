@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 let Repo = require("../../../Repository/Users/Api/Setup");
-let Controller = require("../../../controllers/Users/Api/setup.controller");
 
 router.get('/:inUserPK', function (req, res, next) {
     let LocalUserPK = req.params.inUserPK;
@@ -14,7 +13,5 @@ router.get('/:inUserPK', function (req, res, next) {
         res.end(JSON.stringify(PromiseError));
     });
 });
-
-router.get('/FoldersOnly/:inUserPK', Controller.CreateFoldersOnly);
 
 module.exports = router;
