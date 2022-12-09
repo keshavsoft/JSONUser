@@ -16,5 +16,7 @@ router.get('/:inUserPK', function (req, res, next) {
 });
 
 router.get('/FoldersOnly/:inUserPK', Controller.CreateFoldersOnly);
+router.get('/ForSql/FoldersOnly/:inUserPK', Controller.CreateForMsSql);
+
 
 module.exports = router;
