@@ -7,3 +7,7 @@ exports.Basic = async ({ inUserPK }) => {
 exports.CreateFoldersOnly = async ({ inUserPK }) => {
     return await dal.CreateFoldersOnly({ inUserPK });
 };
+
+exports.CreateForMsSql = async ({ inUserPK }) => {
+    return await dal.CreateForMsSql({ inUserPK });
+};
