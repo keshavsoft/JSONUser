@@ -1,12 +1,7 @@
-var express = require('express');
-var router = express.Router();
-
 let Repo = require("../../../../Repository/Admin/Api/InAdminDataJson/Check");
-let Controller = require("../../../../controllers/Admin/Api/InAdminDataJson/check.controller");
+let CommonjwtFunc = require("../../../../../../common/Jwt/ForUserManagement");
 
-let CommonjwtFunc = require("../../../../../../common/Jwt/ForAdminDataJson");
-
-router.post('/LoginCheck', (req, res, next) => {
+let TokenToCookie = (req, res) => {
     let LocalUserName = req.body.inUserName;
     let LocalPassWord = req.body.inPassword;
 
@@ -31,8 +26,6 @@ router.post('/LoginCheck', (req, res, next) => {
             res.json(PromiseDataFromUserCheck);
         };
     });
-});
+};
 
-router.post('/TokenToCookie', Controller.TokenToCookie);
-
-module.exports = router;
+module.exports = { TokenToCookie };
