@@ -2,7 +2,7 @@ let Repo = require("../../../Repository/Users/Api/Setup");
 
 let CreateFromTemplateData = (req, res) => {
     let LocalUserPK = req.params.inUserPK;
-    console.log("ssssssss : ", LocalUserPK);
+    
     Repo.Basic({
         inUserPK: LocalUserPK
     }).then((PromieData) => {
@@ -14,7 +14,7 @@ let CreateFromTemplateData = (req, res) => {
 
 let CreateFoldersOnly = (req, res) => {
     let LocalUserPK = req.params.inUserPK;
-    console.log("CreateFoldersOnly : ", LocalUserPK);
+
     Repo.CreateFoldersOnly({
         inUserPK: LocalUserPK
     }).then((PromieData) => {
@@ -26,7 +26,7 @@ let CreateFoldersOnly = (req, res) => {
 
 let CreateForMsSql = (req, res) => {
     let LocalUserPK = req.params.inUserPK;
-    console.log("CreateForMsSql : ", LocalUserPK);
+    
     Repo.CreateForMsSql({
         inUserPK: LocalUserPK
     }).then((PromieData) => {

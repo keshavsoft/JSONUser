@@ -5,7 +5,7 @@ let Controller = require("../../../controllers/Users/Api/setup.controller");
 
 router.get('/:inUserPK', function (req, res, next) {
     let LocalUserPK = req.params.inUserPK;
-    console.log("ssssssss : ", LocalUserPK);
+    
     Repo.Basic({
         inUserPK: LocalUserPK
     }).then((PromieData) => {
