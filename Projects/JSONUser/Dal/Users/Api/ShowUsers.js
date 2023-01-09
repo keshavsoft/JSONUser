@@ -1,11 +1,9 @@
-// let CommonUserFuncs = require("../../../../../DataSupply/Fs/LoginFolder/UserDataJson/PullData/FromFile");
+let CommonUserFuncs = require("../../../../../DataSupply/Fs/Config/JSONFolder/UserFolders/PullFolders/getDirectoriesWithUserCredntials");
 
-let ShowData = async ({inUserPK}) => {
-    let LocalReturnData = await CommonUserFuncs.StartFunc({inUserPK});
+let ShowData = async ({ inUserPK }) => {
+    return await CommonUserFuncs.StartFunc({ inUserPK });
 
-    if (LocalReturnData.KTF) {
-        return await LocalReturnData.JsonData.data;
-    }
+
 };
 
 module.exports = { ShowData };
