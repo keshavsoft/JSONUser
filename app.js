@@ -1,42 +1,27 @@
-let CommonProjectName = "JSONImport";
-let CommonProjectNameForJSONApi = "JSONApi";
-let CommonProjectNameForJSONAdminApi = "JSONAdminApi";
-let commonProjectNameForJSONUser = "JSONUser";
+let CommonProjectNameForJSONUser = "JSONUser";
 
 require('dotenv').config()
 
 const express = require('express');
-var path = require('path');
-
+const http = require('http');
 const app = express();
 var path = require('path');
 var cookieParser = require('cookie-parser');
+const server = http.createServer(app);
 
-var port = normalizePort(process.env.PORT || '4120');
+var port = normalizePort(process.env.PORT || '4119');
 
-//let SubRouteJSONReports = require(`./Projects/${CommonProjectName}/Routes`);
-//let SubRouteJSONApi = require(`./Projects/${CommonProjectNameForJSONApi}/Routes`);
-//let SubRouteJSONAdminApi = require(`./Projects/${CommonProjectNameForJSONAdminApi}/Routes`);
-let SubRouteJSONUser = require(`./Projects/${commonProjectNameForJSONUser}/Routes`);
+let SubRouteJSONUser = require(`./Projects/${CommonProjectNameForJSONUser}/Routes`);
 
 app.use(cookieParser());
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json({ limit: '100mb' }));
-
 app.get('/', function (req, res, next) {
-    //console.log("ssssssss : ", process.env.NODE_ENV);
-    console.log("process.env : ", process.env.KS_EMAIL_PASS);
     res.sendFile(path.join(__dirname + `/Html/JSONProject.html`));
 });
 
+app.use(`/${CommonProjectNameForJSONUser}`, SubRouteJSONUser);
 
-//app.use("/JSONUser", SubRouteJSONUser);
 //app.use("/JSONApi", cors({ origin: '*' }), SubRouteJSONProject);
-//app.use(`/${CommonProjectName}`, SubRouteJSONReports);
-//app.use(`/${CommonProjectNameForJSONApi}`, SubRouteJSONApi);
-//app.use(`/${CommonProjectNameForJSONAdminApi}`, SubRouteJSONAdminApi);
-app.use(`/${commonProjectNameForJSONUser}`, SubRouteJSONUser);
 
 function normalizePort(val) {
     var port = parseInt(val, 10);
@@ -52,7 +37,7 @@ function normalizePort(val) {
     return false;
 };
 
-app.listen(port, () => {
+server.listen(port, () => {
     console.log(`Listening in port : ${port}`);
     console.log(`Click to open : http://localhost:${port}`);
 });

@@ -1,8 +1,7 @@
-POST http://localhost:4119/JSONUser/Validate/Users/InUserGroupsJson/CheckForUserNamePasswordFirm
+POST http://localhost:4119/JSONUser/Validate/Users/InUserDataJson/ForUserNameAndPassword/LoginCheckReturnTokenOnly
 content-type: application/json
  
 {   
-  "inUserName": "ABS",
-  "inPassWord": "ABS",
-  "inFirmName": "JASTHI"
+"inUserName":"K11",
+"inPassWord":"K11"
 }
