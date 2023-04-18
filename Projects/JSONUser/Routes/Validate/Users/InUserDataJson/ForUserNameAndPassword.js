@@ -6,7 +6,7 @@ let CommonMiddleware = require("../../../../Middleware/Validate/Users/InUserData
 
 let CommonjwtFunc = require("../../../../../../common/Jwt/Bs5");
 
-router.post('/',CommonMiddleware.CheckForUserNamePasswordFirm, (req, res,) => {
+router.post('/',(req, res,) => {
     let LocalUserName = req.body.inUserName;
     let LocalPassWord = req.body.inPassWord;
 
@@ -47,7 +47,7 @@ router.post('/TokenToCookie', (req, res,) => {
     })
 });
 
-router.post('/LoginCheckReturnTokenOnly', (req, res,) => {
+router.post('/LoginCheckReturnTokenOnly',CommonMiddleware.ForUserNameAndPassword,  (req, res,) => {
     if ("inUserName" in req.body) {
         if ("inPassWord" in req.body) {
 
