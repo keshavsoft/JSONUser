@@ -2,9 +2,11 @@ let express = require("express");
 let router = express.Router();
 
 let Repo = require("../../../../Repository/Validate/Users/InUserDataJson/ForUserNameAndPassword")
+let CommonMiddleware = require("../../../../Middleware/Validate/Users/InUserDataJson/ForUserNameAndPassword")
+
 let CommonjwtFunc = require("../../../../../../common/Jwt/Bs5");
 
-router.post('/', (req, res,) => {
+router.post('/',CommonMiddleware.CheckForUserNamePasswordFirm, (req, res,) => {
     let LocalUserName = req.body.inUserName;
     let LocalPassWord = req.body.inPassWord;
 
