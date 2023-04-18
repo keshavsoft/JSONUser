@@ -1,7 +1,5 @@
 let CommonProjectNameForJSONUser = "JSONUser";
 
-require('dotenv').config()
-
 const express = require('express');
 const http = require('http');
 const app = express();
@@ -14,6 +12,7 @@ var port = normalizePort(process.env.PORT || '4119');
 let SubRouteJSONUser = require(`./Projects/${CommonProjectNameForJSONUser}/Routes`);
 
 app.use(cookieParser());
+app.use(express.json({ limit: '100mb' }));
 
 app.get('/', function (req, res, next) {
     res.sendFile(path.join(__dirname + `/Html/JSONProject.html`));
