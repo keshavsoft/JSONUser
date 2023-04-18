@@ -1,12 +1,31 @@
-let DataSupply = require("../../../../../../DataSupply/Fs/LoginFolder/UserDataJson/Find/UserNameAndPassword");
+exports.ForUserNameAndPassword = (req, res, next) => {
+    console.log("req.body",req.body);
+    if (Object.keys(req.body).length === 0) {
+        res.json({
+            KTF: false,
+            KReason: "post requst body should contain : ",
+            body: {
+                inUserName: "",
+                inPassWord: "",
+                inFirmName: ""
+            }
+        });
+    } else {
+        if (("inUserName" in req.body) === false) {
+            res.json({ KTF: false, KReason: "inUserName not found in body" })
 
-let ForUserAndPassword = async ({ inUserName, inPassWord }) => {
-    return await DataSupply.StartFunc({ inUserName, inPassWord });
-};
+        } else {
+            if (("inPassWord" in req.body) === false) {
+                res.json({ KTF: false, KReason: "inPassWord not found in body" })
 
-let ForUserAndPasswordReturnFirmDetails = async ({ inUserName, inPassWord }) => {
-    return await DataSupply.ForUserAndPasswordReturnFirmDetails({ inUserName, inPassWord });
-};
+            } else {
+                if (("inFirmName" in req.body) === false) {
+                    res.json({ KTF: false, KReason: "inFirmName not found in body" })
 
-module.exports = { ForUserAndPassword, ForUserAndPasswordReturnFirmDetails };
-
+                } else {
+                    next();
+                };
+            };
+        };
+    };
+}; 
