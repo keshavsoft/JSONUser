@@ -1,5 +1,15 @@
+<<<<<<< HEAD
+POST http://localhost:4119/JSONUser/Admin/Api/InAdminDataJson/Check/LoginCheck
+Cookie: KUMAToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IktFU0hBViIsIkRhdGFQayI6IjEiLCJpYXQiOjE2ODM1NjQ1NTJ9.7FvqkwYsNNSAAzEetDo4Su0kCr4dDnJ53kOO5liTHl4
+content-type: application/json
+
+{
+
+}
+=======
 POST http://localhost:4119/JSONUser/Login/Users/Admin/InsertData/FromUpload/901
 Cookie: KUMAToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IktFU0hBViIsIkRhdGFQayI6IjEiLCJpYXQiOjE2ODM1NjQ1NTJ9.7FvqkwYsNNSAAzEetDo4Su0kCr4dDnJ53kOO5liTHl4
 content-type: application/json
 
 {}
+>>>>>>> 77c8777a535dae5d7f4f9bfc2b4c86e0b41ba8cd
