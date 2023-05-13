@@ -2,4 +2,5 @@ POST http://localhost:4116/JSONUser/Admin/Api/InAdminDataJson/Check/LoginCheck
 content-type: application/json
  
 {   
+    
 }
