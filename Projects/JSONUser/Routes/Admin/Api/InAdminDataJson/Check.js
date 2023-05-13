@@ -3,7 +3,7 @@ var router = express.Router();
 
 let Repo = require("../../../../Repository/Admin/Api/InAdminDataJson/Check");
 let Controller = require("../../../../controllers/Admin/Api/InAdminDataJson/check.controller");
-
+let CommonMiddleware = require("../../../../Middleware/Admin/Api/InAdminDataJson/Check");
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForAdminDataJson");
 
 router.post('/LoginCheck1', (req, res, next) => {
@@ -33,7 +33,11 @@ router.post('/LoginCheck1', (req, res, next) => {
     });
 });
 
+<<<<<<< HEAD
+router.post('/LoginCheck', CommonMiddleware.LoginCheck,  Controller.LoginCheck);
+=======
 router.post('/LoginCheck', Controller.LoginCheck);
+>>>>>>> 77c8777a535dae5d7f4f9bfc2b4c86e0b41ba8cd
 router.post('/TokenToCookie', Controller.TokenToCookie);
 router.post('/TokenReturnOnly', Controller.TokenReturnOnly);
 
