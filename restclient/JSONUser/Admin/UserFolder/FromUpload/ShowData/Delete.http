@@ -1,0 +1,7 @@
+DELETE http://localhost:4119/JSONUser/Admin/UserFolder/FromUpload/ShowDatas
+Cookie: KUMAToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IktFU0hBViIsIkRhdGFQayI6IjEiLCJpYXQiOjE2ODM5NzE5NjB9.r1dcuoQG7Q6r_PhHgIN46lXGoSvmJqQH7f5db8osOmI
+content-type: application/json
+
+{
+    "inFolderName":"1022"
+}
