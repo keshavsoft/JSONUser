@@ -1,7 +1,5 @@
-POST http://localhost:4119/JSONUser/Admin/Api/InAdminDataJson/Check/TokenReturnOnly
+POST http://localhost:4116/JSONUser/Admin/Api/InAdminDataJson/Check/LoginCheck
 content-type: application/json
  
 {   
-"inUserName":"KESHAV",
-"inPassword":"KESHAV"
 }

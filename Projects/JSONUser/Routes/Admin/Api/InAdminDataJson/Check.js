@@ -33,11 +33,7 @@ router.post('/LoginCheck1', (req, res, next) => {
     });
 });
 
-<<<<<<< HEAD
-router.post('/LoginCheck', CommonMiddleware.LoginCheck,  Controller.LoginCheck);
-=======
-router.post('/LoginCheck', Controller.LoginCheck);
->>>>>>> 77c8777a535dae5d7f4f9bfc2b4c86e0b41ba8cd
+router.post('/LoginCheck', CommonMiddleware.LoginCheck, Controller.LoginCheck);
 router.post('/TokenToCookie', Controller.TokenToCookie);
 router.post('/TokenReturnOnly', Controller.TokenReturnOnly);
 
