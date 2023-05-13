@@ -6,7 +6,7 @@ let Controller = require("../../../../controllers/Admin/Api/InAdminDataJson/chec
 
 let CommonjwtFunc = require("../../../../../../common/Jwt/ForAdminDataJson");
 
-router.post('/LoginCheck', (req, res, next) => {
+router.post('/LoginCheck1', (req, res, next) => {
     let LocalUserName = req.body.inUserName;
     let LocalPassWord = req.body.inPassword;
 
@@ -33,8 +33,7 @@ router.post('/LoginCheck', (req, res, next) => {
     });
 });
 
-
-router.post('/LoginCheck1', Controller.LoginCheck1);
+router.post('/LoginCheck', Controller.LoginCheck);
 router.post('/TokenToCookie', Controller.TokenToCookie);
 router.post('/TokenReturnOnly', Controller.TokenReturnOnly);
 
