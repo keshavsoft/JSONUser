@@ -9,10 +9,11 @@ let FolderCheck = (req, res) => {
 };
 
 let PostFunc = (req, res) => {
-    //console.log("11111111111111 : ", req.file);
-    let LocalToPath="KData/JSON-UpLoad"
-    decompress(req.file.originalname,LocalToPath).then(files => {
-        console.log('done!', files[0]);
+    // console.log("11111111111111 : ", req.file);
+    let LocalToPath = "KData/JSON-UpLoad"
+    decompress(req.file.originalname, LocalToPath).then(files => {
+        res.sendStatus(200);
+        console.log('done!', res);
     });
 
     res.end("");
