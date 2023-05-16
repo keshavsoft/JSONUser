@@ -3,5 +3,6 @@ Cookie: KUMAToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IktFU0hBV
 content-type: application/json
 
 {
-
+    "inUserName":"",
+    "inPassword":""
 }
