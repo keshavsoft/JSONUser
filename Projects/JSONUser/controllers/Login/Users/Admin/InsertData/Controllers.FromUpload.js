@@ -6,8 +6,17 @@ let Upload = (req, res) => {
     let LocalFromRepo = Repo.Upload({
         inDataPK: LocalDataPk
     });
+    console.log("LocalFromRepo:",LocalFromRepo);
+    if (LocalFromRepo.KTF) {
+        res.sendStatus(200);
+    } else {
+        res.sendStatus(400)
 
-    res.json(LocalFromRepo);
+    };
+
+    // res.json(LocalFromRepo);
+    // console.log("LocalFromRepo:",LocalFromRepo);
+
 };
 
 module.exports = { Upload };
