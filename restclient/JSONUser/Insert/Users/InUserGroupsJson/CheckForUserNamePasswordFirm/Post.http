@@ -1,0 +1,8 @@
+POST http://localhost:4116/JSONUser/Insert/Users/InUserGroupsJson/CheckForUserNamePasswordFirm
+content-type: application/json
+ 
+{   
+      "inUserName": "JASTI3",
+    "inPassWord": "JASTI3",
+    "inFirmName": "Sri Raghava Trading Company-2021-23"
+}
