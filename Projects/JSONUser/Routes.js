@@ -10,7 +10,7 @@ let CommonMiddlewareJwtVerify = require("../../common/Jwt/ForUserManagement");
 
 router.use('/Users', CommonMiddlewareJwtVerify.ForKeshavSoftRedirectToLogin, require('./Routes/Users'));
 router.use('/Admin', SubRouteAdmin);
-router.use('/Validate', CommonMiddlewareJwtVerify.ForKeshavSoftRedirectToLogin, CommonValidate);
+router.use('/Validate', CommonValidate);
 router.use('/Login', CommonMiddlewareJwtVerify.ForKeshavSoftRedirectToLogin, CommonLogin);
 router.use('/Insert', CommonInsert);
 

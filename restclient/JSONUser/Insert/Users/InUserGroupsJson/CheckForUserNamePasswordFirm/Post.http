@@ -2,7 +2,7 @@ POST http://localhost:4116/JSONUser/Insert/Users/InUserGroupsJson/CheckForUserNa
 content-type: application/json
  
 {   
-      "inUserName": "JASTI3",
-    "inPassWord": "JASTI3",
+      "inUserName": "JASTI",
+    "inPassWord": "JASTI",
     "inFirmName": "Sri Raghava Trading Company-2021-23"
 }
