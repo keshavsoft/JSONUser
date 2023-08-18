@@ -8,6 +8,8 @@ let Create = async ({ inUserPK, inUserName, inPassword, inEmail }) => {
     let LocalReturnData;
 
     if (inUserPK > 0) {
+        LocalReturnData = await CommonNewUser.WithEmail({ inUserName, inPassword, inEmail });
+
         // LocalReturnData = await CommonUserFuncs.PushDataAysnc({ inUserPK, inUserName, inPassword, inEmail });
 
         return await LocalReturnData;
