@@ -1,0 +1,7 @@
+GET http://localhost:4116/JSONUser/Users/Api/SetupByCopy/Cleaning/FromPk/1
+Cookie: KUMAToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6IjMwMTYiLCJEYXRhUGsiOiIzMDE2IiwiaWF0IjoxNjkyNjA0OTMwfQ.lBcWgastYidXsTnODTVmYeic5VIKAnJ7K_zz8Ds82uM
+content-type: application/json
+
+
+ 
+
