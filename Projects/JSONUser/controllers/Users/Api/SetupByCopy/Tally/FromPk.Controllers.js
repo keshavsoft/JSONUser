@@ -1,9 +1,9 @@
 let Repo = require("../../../../../Repository/Users/Api/SetupByCopy/Tally/FromPk");
 
-let CreateFunc = (req, res) => {
+let CreateFunc = async (req, res) => {
     let LocalUserPK = req.params.inUserPK;
 
-    let ResData = Repo.CreateFunc({
+    let ResData = await Repo.CreateFunc({
         inUserPK: LocalUserPK
     });
 
