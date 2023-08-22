@@ -1,9 +1,8 @@
-// let CommonDataSupply = require("../../../../../");
+let CommonDataSupply = require("../../../../../../../DataSupply/Fs/LoginFolder/Admin/Setup/Cleaning");
 
 let CreateFunc = async ({ inUserPK }) => {
-    console.log("From Dal");
 
-    // return await CommonDataSupply.StartFunc({ inUserPK });
+    return await CommonDataSupply.StartFunc({ inUserPK });
 };
 
 module.exports = { CreateFunc };
