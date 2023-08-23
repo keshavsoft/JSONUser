@@ -5,5 +5,4 @@ let StarFunc = async () => {
     // return await DataSupply.StartFunc();
 };
 
-
 module.exports = { StarFunc };
