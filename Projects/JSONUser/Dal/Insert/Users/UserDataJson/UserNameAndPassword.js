@@ -1,7 +1,7 @@
 let DataSupply = require("../../../../../../DataSupply/Fs/Config/JSONFolder/LoginFolder/UserDataJsonFile/Insert/UserNamePassword");
 
-let StarFunc = async ({ inPassword, inPassword }) => {
-    return await DataSupply.StartFunc({ inPassword, inPassword });
+let StarFunc = ({ inUserName, inPassword }) => {
+    return DataSupply.StartFunc({ inUserName, inPassword });
 };
 
 module.exports = { StarFunc };

@@ -1,6 +1,6 @@
-let Dal = require("../../../../Dal/Validate/Users/UserDataJson/UserNameAndPassword")
+let Dal = require("../../../../Dal/Insert/Users/UserDataJson/UserNameAndPassword")
 
-exports.StarFunc = async ({inPassword,inPassword}) => {
-   return await Dal.StarFunc({inPassword,inPassword});
+exports.StarFunc = ({inUserName,inPassword}) => {
+   return Dal.StarFunc({inUserName,inPassword});
 };
 
