@@ -1,0 +1,4 @@
+GET http://localhost:4116/JSONUser/Insert/Users/UserDataJson/UserNameAndPassword/SREE/SREE
+content-type: application/json
+ 
+{}
