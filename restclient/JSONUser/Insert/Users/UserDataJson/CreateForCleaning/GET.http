@@ -1,0 +1,4 @@
+GET http://localhost:4116/JSONUser/Insert/Users/UserDataJson/CreateForCleaning/L21/L21
+content-type: application/json
+ 
+{}
