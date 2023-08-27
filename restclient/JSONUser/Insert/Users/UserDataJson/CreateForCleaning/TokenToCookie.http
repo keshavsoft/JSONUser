@@ -1,0 +1,4 @@
+GET http://localhost:4116/JSONUser/Insert/Users/UserDataJson/CreateForCleaning/TokenToCookie/K7/K7
+content-type: application/json
+ 
+{}
