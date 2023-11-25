@@ -1,0 +1,7 @@
+POST http://localhost:4116/JSONUser/Users/Api/CreateAndSetup/Cleaning/LaundryCredentials
+content-type: application/json
+ 
+{   
+"UserName":"3016",
+"PassWord":"3016"
+}
