@@ -1,0 +1,7 @@
+POST http://localhost:4119/JSONUser/Users/Api/CreateAndSetup/Blank/ForCredentials
+content-type: application/json
+ 
+{   
+"UserName":"K3",
+"PassWord":"K3"
+}
