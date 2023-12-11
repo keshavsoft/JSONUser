@@ -3,10 +3,10 @@ let router = express.Router();
 
 let CommonCleaning = require("./CreateAndSetup/Cleaning");
 let CommonForChat = require("./CreateAndSetup/ForChat");
-let CommonForBlak = require("./CreateAndSetup/Blak");
+let CommonForBlank = require("./CreateAndSetup/Blank");
 
 router.use('/Cleaning', CommonCleaning);
 router.use('/ForChat', CommonForChat);
-router.use('/Blak', CommonForBlak);
+router.use('/Blank', CommonForBlank);
 
 module.exports = router;
