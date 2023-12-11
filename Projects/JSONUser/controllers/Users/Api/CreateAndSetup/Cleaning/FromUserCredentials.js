@@ -1,16 +1,14 @@
 let Repo = require("../../../../../Repository/Users/Api/CreateAndSetup/Cleaning/FromUserCredentials");
 
-let Save = (req, res) => {
+let Save = async (req, res) => {
     let LocalUserName = req.body.UserName;
     let LocalPassWord = req.body.PassWord;
-    Repo.Save({
+
+    let ResponseData = await Repo.Save({
         inUserName: LocalUserName,
         inPassword: LocalPassWord
-    }).then((PromieData) => {
-        res.end(JSON.stringify(PromieData));
-    }).catch((PromiseError) => {
-        res.end(JSON.stringify(PromiseError));
     });
+    res.json(ResponseData)
 };
 
 module.exports = { Save };
