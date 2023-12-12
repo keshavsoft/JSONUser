@@ -1,10 +1,10 @@
 let Repo = require("../../../../../Repository/Users/Api/CreateAndSetup/Blank/ForCredentials");
 
-let Save = async (req, res) => {
+let Save = (req, res) => {
     let LocalUserName = req.body.UserName;
     let LocalPassWord = req.body.PassWord;
 
-    let ResponseData = await Repo.Save({
+    let ResponseData = Repo.Save({
         inUserName: LocalUserName,
         inPassword: LocalPassWord
     });
