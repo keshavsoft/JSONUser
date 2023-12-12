@@ -1,10 +1,8 @@
-// let CommonUserFuncs = require("../../../../../../../DataSupply/Fs/Config/JSONFolder/LoginFolder/UserDataJsonFile/Setup/Cleaning/WithCreation/ForChat");
+let CommonUserFuncs = require("../../../../../../../DataSupply/Fs/Config/JSONFolder/LoginFolder/UserDataJsonFile/Setup/Blank/WithCreation/ForCredentials");
 
-let Save = async ({ inUserName, inPassword }) => {
+let Save = ({ inUserName, inPassword }) => {
 
-    return "rom Dal"
-
-    // return await CommonUserFuncs.StartFunc({ inUserName, inPassword });
+    return CommonUserFuncs.StartFunc({ inUserName, inPassword });
 };
 
 module.exports = { Save };

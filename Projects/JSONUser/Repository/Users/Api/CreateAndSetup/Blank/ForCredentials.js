@@ -1,5 +1,5 @@
 let dal = require("../../../../../Dal/Users/Api/CreateAndSetup/Blank/ForCredentials");
 
-exports.Save = async ({ inUserName, inPassword }) => {
-    return await dal.Save({ inUserName, inPassword });
+exports.Save = ({ inUserName, inPassword }) => {
+    return dal.Save({ inUserName, inPassword });
 };
