@@ -1,0 +1,4 @@
+GET http://localhost:4116/JSONUser/Users/Api/SetupByCopy/FoldersOnly/FromPk
+content-type: application/json
+ 
+
