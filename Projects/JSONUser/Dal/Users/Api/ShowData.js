@@ -4,7 +4,7 @@ let ShowData = async () => {
     let LocalReturnData = await CommonUserFuncs.StartFunc();
 
     if (LocalReturnData.KTF) {
-        return await LocalReturnData.JsonData;
+        return await LocalReturnData.JsonData.data;
     }
 };
 

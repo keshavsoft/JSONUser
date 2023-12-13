@@ -1,6 +1,10 @@
 let express = require("express");
-let rourer = express.Router();
+let router = express.Router();
 
 let CommonAllUsers = require("./Show/AllUsers");
+let CommonSteUpUsers = require("./Show/SteUpUsers");
 
-rourer.use('/AllUsers', CommonAllUsers);
+router.use('/AllUsers', CommonAllUsers);
+router.use('/SteUpUsers', CommonSteUpUsers);
+
+module.exports = router;
